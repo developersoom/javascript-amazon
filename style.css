@@ -437,6 +437,7 @@ li {
     transition: all 0.5s ease-in-out;
     max-height: 0;
     overflow: hidden;
+    min-width: 1100px;
 }
 
 .plans-extender.shown {
@@ -495,6 +496,7 @@ li {
     width: 282px;
     height: 165px;
     background-image: url("https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/detail_page/GBB_Illustration_01._CB514227929_.png");
+    background-repeat: no-repeat;
 }
 
 .plans-extender-btn {
@@ -517,14 +519,114 @@ li {
     justify-content: center;
 }
 
-.plans-extender-table>div {
-    width: 282px;
+.plans-tables {
+    width: 17.5rem;
     height: 360px;
     border: 1px solid slategray;
     margin: 5px;
-    ;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+input[type="radio"] {
+    display: none;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    top: 0.8rem;
+    right: 0.8rem;
+    cursor: pointer;
+    pointer-events: none;
+    border: 0.1rem solid #eee;
+    transition: border .3s linear;
+}
+
+.plans-tables:hover .checkmark {
+    background-color: #ccc;
+}
+
+input[type="radio"]:checked + label > div {
+    background: radial-gradient(at 155px 98px, #00A8E1, #0094c6);
+}
+
+input[type="radio"]:checked + label > div > div {
+    color: #fff;    
+}
+
+input[type="radio"]:checked + label .checkmark {
+    border: 3px solid gray;
+    background-color:#fff
+}
+
+input[type="radio"]:checked + label .check-arrow {
+    content: '';
+    width: 10px;
+    height: 20px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    display: inline-block;
+}
+
+.plans-table-header {
+    display: flex;
+    flex-direction: column;    
+    margin-left: 2rem;
+    margin-top: 2rem;    
+}
+    
+.plans-header-txt {
+    font-weight: 300;
+    font-size: 1.8rem;
+    padding-bottom: 0.5rem;
+}
+
+.plans-header-price {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.plans-header-price > span {
+    font-weight: 700;
+}
+
+.benefit-lists {
+    margin-top: 2rem;
+    font-weight: 200;
+    font-size: 1rem;
+    padding-left: 2rem;
+}
+
+.benefits {
+    padding-bottom: 1rem;
+    line-height: 1.2rem;
+    height: 35px;
+}
+
+.check-arrow {
+    content: '';
+    width: 10px;
+    height: 20px;
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    display: inline-block;
+}
+
+.benefits > span {
+    padding-left: 0.7rem;
+}
+
+.benefits.not-included-benefit {
+    opacity: 0.2;
+}
+    
 /* header - plans-layer */
 
 .plans-layer {

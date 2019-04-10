@@ -15,8 +15,8 @@ export default class AutoComplete {
         const schInput = document.querySelector(".sch-input");
         const searchedResult = document.querySelector(".searched-result");
         const searchBtn = document.querySelector(".sch-btn");
-        const url = "http://crong.codesquad.kr:8080/amazon/ac/";
-        // const url = "http://codesquadapi.herokuapp.com/ac/";
+        // const url = "http://crong.codesquad.kr:8080/amazon/ac/";
+        const url = "http://codesquadapi.herokuapp.com/ac/";
         const keySet = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "Enter"];
 
         searchBtn.addEventListener("click", (e) => e.preventDefault());
@@ -91,7 +91,7 @@ export default class AutoComplete {
             this.removeSelected(searchedItems);
             this.currentItem = -1;
         } else {
-            searchedResult.classList.add("shown");
+            // searchedResult.classList.add("shown");
             this.removeSelected(searchedItems);
             this.currentItem++;
             searchedItems[this.currentItem].classList.add("selected");
